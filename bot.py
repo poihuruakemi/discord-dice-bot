@@ -1,3 +1,7 @@
+from keep_alive import keep_alive
+
+keep_alive()  # これで Flask が別スレッドで動く
+
 import discord
 from discord.ext import commands
 import re
@@ -34,4 +38,5 @@ async def dice(ctx, dice):
     await ctx.send(f"🎲 {n}d{m} → {rolls} 合計: {sum(rolls)}")
 
 bot.run(os.environ["BOT_TOKEN"])
+
 
